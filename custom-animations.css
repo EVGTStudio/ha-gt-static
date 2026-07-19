@@ -1,0 +1,107 @@
+/* =========================================================
+   ha.gt – Custom Animations
+   Fügt sanfte Scroll- und Hover-Animationen zur bestehenden
+   Go-X / IONOS Baukasten-Seite hinzu, ohne das Design zu ändern.
+   ========================================================= */
+
+/* Respektiert Nutzer, die Animationen reduziert haben wollen (Barrierefreiheit) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* -----------------------------------------
+   1) SCROLL-REVEAL für Sections & Spalten
+   ----------------------------------------- */
+.animated-element,
+.section-root {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+header.section-root {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.animated-element.is-visible,
+.section-root.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.grid-row-has-columns > .grid-column-root:nth-child(1) { transition-delay: 0.05s; }
+.grid-row-has-columns > .grid-column-root:nth-child(2) { transition-delay: 0.15s; }
+.grid-row-has-columns > .grid-column-root:nth-child(3) { transition-delay: 0.25s; }
+.grid-row-has-columns > .grid-column-root:nth-child(4) { transition-delay: 0.35s; }
+
+/* -----------------------------------------
+   2) BILDER – sanfter Zoom bei Hover
+   ----------------------------------------- */
+.image-img,
+.image-gallery-wrapper-image img,
+.image-container img {
+  transition: transform 0.6s ease, filter 0.6s ease;
+  will-change: transform;
+}
+
+.image-wrapper,
+.image-container,
+.image-gallery-wrapper-item {
+  overflow: hidden;
+}
+
+.image-wrapper:hover .image-img,
+.image-gallery-wrapper-item:hover img,
+.image-container:hover img {
+  transform: scale(1.06);
+}
+
+/* -----------------------------------------
+   3) BUTTONS – etwas Leben beim Hover
+   ----------------------------------------- */
+.button-primary-button,
+.button-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.button-primary-button:hover,
+.button-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  filter: brightness(1.05);
+}
+
+/* -----------------------------------------
+   4) HERO-HEADER – sanftes "Ken Burns"
+   ----------------------------------------- */
+header.section-root .section-inner {
+  animation: heroKenBurns 22s ease-in-out infinite alternate;
+}
+
+@keyframes heroKenBurns {
+  0%   { transform: scale(1);    }
+  100% { transform: scale(1.08); }
+}
+
+/* -----------------------------------------
+   5) NAVIGATION – sanfterer Hover
+   ----------------------------------------- */
+.navigation-item {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* -----------------------------------------
+   6) LOGO – dezenter Hover-Effekt
+   ----------------------------------------- */
+.logo-image {
+  transition: transform 0.4s ease;
+}
+.logo-link:hover .logo-image {
+  transform: scale(1.05) rotate(-1deg);
+}
