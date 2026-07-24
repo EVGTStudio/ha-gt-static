@@ -99,7 +99,15 @@ header.section-root .section-inner {
    5) NAVIGATION – sanfterer Hover
    ----------------------------------------- */
 .navigation-item {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Nur Desktop: sanftes Anheben + Farbwechsel beim Hover */
+@media (min-width: 1024px) {
+  .navigation-item:hover {
+    transform: translateY(-3px);
+    color: #dbb572 !important;
+  }
 }
 
 /* -----------------------------------------
