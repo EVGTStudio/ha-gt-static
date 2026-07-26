@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
 /* =========================================================
    ha.gt – Custom Animations
    Fügt sanfte Scroll- und Hover-Animationen zur bestehenden
    Go-X / IONOS Baukasten-Seite hinzu, ohne das Design zu ändern.
    ========================================================= */
+
+/* -----------------------------------------
+   0) SCHRIFTARTEN – cinematisch, einheitlich
+   Playfair Display für Überschriften,
+   Jost für Menü & Fließtext.
+   (!important nötig, da die Seite viele
+   Inline-style-Angaben pro Textblock nutzt)
+   ----------------------------------------- */
+body, body * {
+  font-family: 'Jost', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+  font-family: 'Playfair Display', serif !important;
+}
 
 /* Respektiert Nutzer, die Animationen reduziert haben wollen (Barrierefreiheit) */
 @media (prefers-reduced-motion: reduce) {
