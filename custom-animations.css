@@ -167,6 +167,17 @@ header.section-root .section-inner {
     transform: none !important;
   }
 }
+/* -----------------------------------------
+   8) ÜBERSETZER-WIDGET – fehlende Flaggen ausblenden
+   Die Flaggen-Bilder wurden beim Rettungs-Download
+   nie erfasst (JS-Nachladung). Statt sie nachzubauen,
+   blenden wir sie einfach aus — übrig bleibt sauberer
+   Text ("EN" statt "EN EN", "German" statt "de German").
+   ----------------------------------------- */
+#iwt_float_wrapper img {
+  display: none !important;
+}
+
 .logo-image {
   /* bewusst ohne Animation — statisches Logo */
 }
