@@ -101,16 +101,12 @@ header.section-root {
 }
 
 /* -----------------------------------------
-   4) HERO-HEADER – sanftes "Ken Burns"
-   (langsames Reinzoomen des Hintergrundbilds)
+   4) HERO-HEADER — Bild bleibt statisch,
+   kein Zoom-Effekt mehr.
    ----------------------------------------- */
 header.section-root .section-inner {
-  animation: heroKenBurns 22s ease-in-out infinite alternate;
-}
-
-@keyframes heroKenBurns {
-  0%   { transform: scale(1);    }
-  100% { transform: scale(1.08); }
+  transform: none !important;
+  animation: none !important;
 }
 
 /* -----------------------------------------
