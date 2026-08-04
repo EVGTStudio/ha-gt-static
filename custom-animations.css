@@ -199,7 +199,20 @@ header.section-root {
 }
 
 /* Hero-Hintergrundbild: immer komplett sichtbar, kein Zoom/Zuschnitt mehr */
+
+/* Hero-Bereich (Header + erster Inhaltsblock) auf moderate Höhe begrenzen,
+   damit das breite 16:9-Foto nicht extrem gezoomt werden muss */
+header.section-root {
+  max-height: 65vh !important;
+  min-height: 65vh !important;
+}
+
+header.section-root + main > .section-root:first-child {
+  max-height: 45vh !important;
+  min-height: 45vh !important;
+}
+
 [style*="cffd9291-cccf-4890-83ad-ed741e0171e8"] {
-  background-size: contain !important;
-  background-color: #1a1a1a !important;
+  background-size: cover !important;
+  background-position: center 35% !important;
 }
