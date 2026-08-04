@@ -200,3 +200,10 @@ header.section-root {
 
 /* Hero-Hintergrundbild: immer komplett sichtbar, kein Zoom/Zuschnitt mehr */
 
+
+/* Fix: --header-height war fälschlich auf 1920px eingefroren
+   (ursprünglich von IONOS-JS live berechnet, existiert nicht mehr).
+   Erzwingt einen sinnvollen, festen Wert überall auf der Seite. */
+[style*="--header-height"] {
+  --header-height: 140px !important;
+}
