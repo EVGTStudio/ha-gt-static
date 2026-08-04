@@ -207,3 +207,11 @@ header.section-root {
 [style*="--header-height"] {
   --header-height: 140px !important;
 }
+
+/* Auf breiten Desktop-Bildschirmen: anderer Bildausschnitt-Fokus,
+   damit See und Himmel auch dort sichtbar bleiben */
+@media (min-width: 900px) {
+  [style*="cffd9291-cccf-4890-83ad-ed741e0171e8"] {
+    background-position: center 20% !important;
+  }
+}
