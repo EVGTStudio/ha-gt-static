@@ -197,3 +197,9 @@ header.section-root {
 .logo-image {
   /* bewusst ohne Animation — statisches Logo */
 }
+
+/* Hero-Hintergrundbild: immer komplett sichtbar, kein Zoom/Zuschnitt mehr */
+[style*="cffd9291-cccf-4890-83ad-ed741e0171e8"] {
+  background-size: contain !important;
+  background-color: #1a1a1a !important;
+}
